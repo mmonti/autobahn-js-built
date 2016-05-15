@@ -573,7 +573,7 @@ Connection.prototype.open = function () {
          } else {
             reason = "closed";
          }
-        
+
          var next_retry = self._autoreconnect_advance();
 
          // fire app code handler
@@ -4358,7 +4358,7 @@ Factory.prototype.create = function () {
 
                   function (payload) {
 
-                     if (payload) {                     
+                     if (payload) {
 
                         var msg = JSON.parse(payload);
 
@@ -5177,10 +5177,10 @@ Factory.prototype.create = function () {
 
    // Test below used to be via the 'window' object in the browser.
    // This fails when running in a Web worker.
-   // 
+   //
    // running in Node.js
-   // 
-   if (global.process && global.process.versions.node) {
+   //
+   if (global.process && global.process.versions.node && false) {
 
       (function () {
 
@@ -5242,18 +5242,18 @@ Factory.prototype.create = function () {
          });
 
       })();
-   // 
+   //
    // running in the browser
-   // 
+   //
    } else {
-      
+
       (function () {
 
          var websocket;
 
          // Chrome, MSIE, newer Firefox
          if ("WebSocket" in global) {
-            
+
             if (self._options.protocols) {
                websocket = new global.WebSocket(self._options.url, self._options.protocols);
             } else {
